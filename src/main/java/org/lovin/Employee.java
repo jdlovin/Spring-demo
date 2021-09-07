@@ -1,54 +1,24 @@
 package org.lovin;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+
 
 public class Employee {
     private String name;
-    private List<String> phones;
-    private Set<String> addresses;
-    private Map<String, String> departments;
+    private int id;
+    private String email;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public Employee(String name, int id, String email) {
         this.name = name;
-    }
-
-    public List<String> getPhones() {
-        return phones;
-    }
-
-    public void setPhones(List<String> phones) {
-        this.phones = phones;
-    }
-
-    public Set<String> getAddresses() {
-        return addresses;
-    }
-
-    public void setAddresses(Set<String> addresses) {
-        this.addresses = addresses;
-    }
-
-    public Map<String, String> getDepartments() {
-        return departments;
-    }
-
-    public void setDepartments(Map<String, String> departments) {
-        this.departments = departments;
+        this.id = id;
+        this.email = email;
     }
 
     @Override
     public String toString() {
         return "Employee{" +
                 "name='" + name + '\'' +
-                ", phones=" + phones +
-                ", addresses=" + addresses +
-                ", departments=" + departments +
+                ", id=" + id +
+                ", email='" + email + '\'' +
                 '}';
     }
 }

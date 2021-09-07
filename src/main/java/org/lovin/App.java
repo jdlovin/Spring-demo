@@ -12,14 +12,15 @@ public class App
     public static void main( String[] args )
     {
         ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
-        Student student = (Student) context.getBean("student1");
-        System.out.println(student);
+        Employee employee = (Employee) context.getBean("employee1");
+        System.out.println(employee);
 
-        Employee emp1 = (Employee) context.getBean("employee1");
-        System.out.println(emp1.getName());
-        System.out.println(emp1.getPhones());
-        System.out.println(emp1.getAddresses());
-        System.out.println(emp1.getDepartments());
+        Customer customer = (Customer) context.getBean("customer1");
+        System.out.println(customer);
+
+        Calculation calculation = (Calculation) context.getBean("calculation1");
+        calculation.sum();
+        calculation.sub();
 
     }
 }
