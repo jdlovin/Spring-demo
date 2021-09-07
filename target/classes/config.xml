@@ -10,26 +10,8 @@
         http://www.springframework.org/schema/p">
 
 <!--   first example-->
-    <bean class="org.lovin.Employee" name="employee1">
-        <constructor-arg value="Mark"/>
-        <constructor-arg value="100"/>
-        <constructor-arg value="m@gmail.com"/>
-    </bean>
-
-    <bean class="org.lovin.Address" name="address1">
-        <constructor-arg value="city1" />
-        <constructor-arg value="country1"/>
-    </bean>
-
-    <bean class="org.lovin.Customer" name="customer1">
-        <constructor-arg value="101" />
-        <constructor-arg value="Mark" />
-        <constructor-arg ref="address1" />
-    </bean>
-
-    <bean class="org.lovin.Calculation" name="calculation1">
-        <constructor-arg value="100" type="int" index="1" />
-        <constructor-arg value="200" type="int" index="0" />
+    <bean class="org.lovin.Student" name="student1" >
+        <property name="name" value="Billy" />
     </bean>
 
 

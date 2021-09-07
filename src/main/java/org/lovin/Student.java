@@ -1,41 +1,43 @@
 package org.lovin;
 
-public class Student {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 
-    private int studentId;
-    private String studentName;
-    private String studentAddress;
+public class Student implements InitializingBean, DisposableBean {
+    private String name;
 
-    public int getStudentId() {
-        return studentId;
+    public Student(){
+        super();
     }
 
-    public void setStudentId(int studentId) {
-        this.studentId = studentId;
+    public Student(String name) {
+        this.name = name;
     }
 
-    public String getStudentName() {
-        return studentName;
+    public String getName() {
+        return name;
     }
 
-    public void setStudentName(String studentName) {
-        this.studentName = studentName;
-    }
-
-    public String getStudentAddress() {
-        return studentAddress;
-    }
-
-    public void setStudentAddress(String studentAddress) {
-        this.studentAddress = studentAddress;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "studentId=" + studentId +
-                ", studentName='" + studentName + '\'' +
-                ", studentAddress='" + studentAddress + '\'' +
+                "name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        //destroy
+        System.out.println("destroyed called");
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        //init
+        System.out.println("init called");
     }
 }
