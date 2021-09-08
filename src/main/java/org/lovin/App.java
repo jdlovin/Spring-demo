@@ -12,10 +12,8 @@ public class App
 {
     public static void main( String[] args )
     {
-        AbstractApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
-        context.registerShutdownHook();
-
-        Student student = (Student) context.getBean("student1");
+       ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+       Student student = context.getBean("student", Student.class);
         System.out.println(student);
     }
 }

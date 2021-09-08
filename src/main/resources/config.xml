@@ -10,9 +10,17 @@
         http://www.springframework.org/schema/p">
 
 <!--   first example-->
-    <bean class="org.lovin.Student" name="student1" >
-        <property name="name" value="Billy" />
-    </bean>
+   <context:annotation-config />
+
+   <bean class="org.lovin.Course" name="course">
+      <property name="courseId" value="201" />
+      <property name="courseName" value="Java" />
+   </bean>
+
+   <bean class="org.lovin.Student" name="student">
+
+   </bean>
+
 
 
 </beans>

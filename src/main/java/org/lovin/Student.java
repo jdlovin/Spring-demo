@@ -2,16 +2,20 @@ package org.lovin;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 
-public class Student implements InitializingBean, DisposableBean {
+public class Student {
+    private int id;
     private String name;
+    @Autowired
+    private Course course;
 
-    public Student(){
-        super();
+    public int getId() {
+        return id;
     }
 
-    public Student(String name) {
-        this.name = name;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -22,22 +26,20 @@ public class Student implements InitializingBean, DisposableBean {
         this.name = name;
     }
 
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", course=" + course +
                 '}';
-    }
-
-    @Override
-    public void destroy() throws Exception {
-        //destroy
-        System.out.println("destroyed called");
-    }
-
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        //init
-        System.out.println("init called");
     }
 }
